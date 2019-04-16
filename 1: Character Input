@@ -1,0 +1,5 @@
+name = str(input('Enter your name: '))
+age = int(input('Enter your age: '))
+messages = int(input('Enter a nummber: '))
+year = (100-age) + 2019
+print(messages * ('\n''Hello '+name+'. You will be a 100 years old in: '+str(year)))
