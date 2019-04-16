@@ -1,0 +1,65 @@
+while True:
+
+	def game():
+		print('''
+
+Welcome to Rock-Paper-Scissors
+
+Rules:
+	
+    Rock beats scissors
+    Scissors beats paper
+    Paper beats rock
+
+			''')
+		turns()
+
+	def play_again():
+		decision = str(input('Wanna play again?(y/n): '))
+		if decision.lower().startswith('y'):
+			game()
+		elif decision.lower().startswith('n'):
+			exit()
+		else:
+			print('This is not a clear answer, try again!')
+			play_again()
+
+	def turns():
+		player1 = int(input('Rock[1] Paper[2] Scissors[3] - Player1: '))
+		if player1 > 3 or player1 < 1:
+			print('This is not an option, try again!')
+			turns()
+		player2 = int(input('Rock[1] Paper[2] Scissors[3] - Player2: '))
+		if player2 > 3 or player1 < 1:
+			print('This is not an option, try again!')
+			turns()
+		checking(player1, player2)
+
+	def checking(player1, player2):
+		if player1 == player2:
+			print('Draw, no winners!')
+
+		elif player1 == 1:
+			if player2 == 2:
+				print('Player2 wins the game! Paper beats Rock!')
+				play_again()
+			elif player2 == 3:
+				print('Player1 wins the game! Rock beats Scissors!')
+				play_again()
+
+		elif player1 == 2:
+			if player2 == 3:
+				print('Player2 wins the game! Scissors beats Paper!')
+				play_again()
+			elif player2 == 1:
+				print('Player1 wins the game! Paper beats Rock!')
+				play_again()
+
+		elif player1 == 3:
+			if player2 == 1:
+				print('Player2 wins the game! Rock beats Scissors!')
+				play_again()
+			elif player2 == 2:
+				print('Player1 wins the game! Scissors beats Paper!')
+				play_again()
+	game()
