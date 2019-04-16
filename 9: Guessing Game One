@@ -1,0 +1,37 @@
+import random
+
+def game():
+	rdm_number = random.randint(1,10)
+	guesses = 0
+	print('''
+Can you guess my number?
+It is between 1 - 9
+		''')
+	guessing(rdm_number, guesses)
+
+def play_again():
+	again = str(input("To quit game enter 'exit' and to play again enter something else. >>> "))
+	if again == 'exit':
+		exit()
+	else:
+		game()
+
+def guessing(rdm_number, guesses):
+	player_number = int(input('Enter you number: '))
+	if player_number == rdm_number:
+		if guesses == 0:
+			print('Wow! You got my number with the first try! It was '+str(rdm_number))
+			play_again()
+		else:
+			print('You guesses my number with '+str(guesses)+' tries! It was '+str(rdm_number))
+			play_again()
+	elif player_number < rdm_number:
+		print('Your number is smaller than mine. Try again!')
+		guesses = guesses + 1
+		guessing(rdm_number, guesses)
+	elif player_number > rdm_number:
+		print('Your number is bigger than mine. Try again!')
+		guesses = guesses + 1
+		guessing(rdm_number, guesses)
+
+game()
