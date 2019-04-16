@@ -1,0 +1,31 @@
+if len(a) > len(b):
+	for x in a:
+		if x in a and x in b:
+			c.append(x)
+else:
+	for x in b:
+		if x in a and x in b:
+			c.append(x)
+
+print(c)
+
+#
+import random
+n = random.randint(0,100)
+rdm_list1 = []
+rdm_list2 = []
+return_list = []
+for x in range(0,n):
+	rdm_list1.append(random.randint(0,100))
+	rdm_list2.append(random.randint(0,100))
+
+if len(rdm_list1) > len(rdm_list2):
+	for x in rdm_list1:
+		if x in rdm_list1 and x in rdm_list2:
+			return_list.append(x)
+else:
+	for x in rdm_list2:
+		if x in rdm_list1 and x in rdm_list2:
+			return_list.append(x)
+
+print(return_list.sort())
