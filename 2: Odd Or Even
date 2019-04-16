@@ -1,0 +1,18 @@
+number = int(input('Enter a number: '))
+sec_number = int(input('Enter a second number: '))
+
+def check(num, check):
+	if num % check == 0:
+		print(str(check)+' devides evenly into '+str(num))
+	else:
+		print(str(check)+' doesnt devide evenly into '+str(num))
+
+if number % 2 == 0:
+	if number % 4 == 0:
+		print(str(number)+' is a multiple of 4')
+	else:
+		print('even')
+else:
+	print('odd')
+
+check(number, sec_number)
