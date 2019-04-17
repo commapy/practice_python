@@ -1,0 +1,33 @@
+import random
+def create_numbers():
+	game_number = random.randint(1000,10000)
+	return game_number
+
+def play_again():
+	decision = input('Wanna play again?(y/n): ')
+	if decision.lower().startswith('y'):
+		game(create_numbers())
+	elif decision.lower().startswith('n'):
+		exit()
+	else:
+		print('Wrong input, try again!')
+		play_again()
+
+def game(game_number):
+	cows, bulls = 0, 0
+	user_number = int(input('Enter a 4-digit number: '))
+	if len(str(user_number)) != 4:
+		print('The number is either too long or too short. Try again!')#
+		game(game_number)
+	if user_number == game_number:
+		print('You guessed my number.')
+		play_again()
+	else:
+		for x in range(len(str(user_number))):
+			if int(user_number[x]) == int(game_number[x]):
+				cows += 1
+			elif int(user_number) in int(game_number) and int(user_number[x]) != int(game_number[x]):
+				bulls += 1
+
+if __name__=='__main__':
+	game(create_numbers())
