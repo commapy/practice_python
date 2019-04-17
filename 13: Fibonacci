@@ -1,0 +1,19 @@
+def number_in():
+	number = int(input('Enter a number for length of fib sequence: '))
+	return number
+
+def calc_fib(length):
+	count = 0
+	fib = []
+	numb1 = 0
+	numb2 = 1
+
+	while count < length:
+		numb3 = numb2 + numb1
+		fib.append(numb3)
+		numb1 = numb2
+		numb2 = numb3
+		count += 1
+	return fib
+
+print(calc_fib(number_in()))
