@@ -1,0 +1,8 @@
+a = [5, 10, 15, 20, 25]
+def new_list(in_list):
+	x = []
+	x.append(in_list[0])
+	x.append(in_list[-1])
+	return x
+new_list = new_list(a)
+print(new_list)
