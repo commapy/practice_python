@@ -1,0 +1,12 @@
+def enter():
+	check_numb = int(input('Enter a number: '))
+	check_prime(check_numb)
+
+def check_prime(check_numb):
+	x = [n for n in range(2,check_numb) if check_numb%n == 0]
+	if len(x) == 0:
+		print(check_numb,'is a prime number')
+	else:
+		print(check_numb, 'is not a prime number')
+
+enter()
