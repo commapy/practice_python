@@ -1,0 +1,10 @@
+def string_in():
+	string_in = str(input('Enter a string: '))
+	return string_in
+
+def reverse_string(string_in):
+	string_list = string_in.split()
+	return_string = ' '.join(string_list[::-1])
+	return return_string
+
+print(reverse_string(string_in()))
