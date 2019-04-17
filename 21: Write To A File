@@ -1,0 +1,4 @@
+text = 'some text'
+filename = str(input('Enter a file name: '))
+file = open(filename+'.txt', 'w')
+file.write(text)
