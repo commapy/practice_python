@@ -1,0 +1,9 @@
+import requests, re
+
+url = 'https://www.nytimes.com/'
+r = requests.get(url)
+r_html = r.text
+find_title = re.findall(r'<style>.+</style>',r_html)
+print(find_title)
+
+# Instead of seaching for all the headers, I searched for the <style> tag as you can see
